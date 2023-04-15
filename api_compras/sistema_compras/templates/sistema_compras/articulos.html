@@ -1,0 +1,42 @@
+{%  extends 'sistema_compras/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Articulos</h5>
+					<td><a class="btn btn-success" href="/create_articulos">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Descripcion</th>
+							<th>Marca</th>
+							<th>Existencia</th>
+							<th>Unidad de Medida</th>
+							<th>Estado</th>
+                            <th></th>
+                            <th></th>
+						</tr>
+
+						{% for i in articulos %}
+							<tr>
+								<td>{{i.descripcion}}</td>
+								<td>{{i.marca}}</td>
+								<td>{{i.existencia}}</td>
+								<td>{{i.unidad_medida}}</td>
+								<td>{{i.estado}}</td>
+								<td><a class="btn btn-info" href= "/update_articulos/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-danger" href="/delete_articulos/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

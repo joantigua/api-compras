@@ -1,0 +1,43 @@
+{%  extends 'sistema_compras/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Asiento</h5>
+					<td><a class="btn btn-success" href="/create_asiento">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>ID Asiento</th>
+							<th>ID Cuenta de Debito</th>
+							<th>Monto Debito</th>
+							<th>ID Cuenta de Credito</th>
+							<th>Monto Credito</th>
+                            <th></th>
+                            <th></th>
+						</tr>
+
+						{% for i in asiento %}
+							<tr>
+								<td>{{i.id}}</td>
+								<td>{{i.id_cuenta_db}}</td>
+								<td>{{i.monto_db}}</td>
+								<td>{{i.id_cuenta_cr}}</td>
+								<td>{{i.monto_cr}}</td>
+								<td><a class="btn btn-info" href= "/update_asiento/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-danger" href="/delete_asiento/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-dark" href= "/create_asiento_json/{{ i.id }}">Mandar Asiento a Contabilidad<span class="sr-only">(current)</span></a></td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

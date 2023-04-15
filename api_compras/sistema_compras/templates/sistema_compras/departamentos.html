@@ -1,0 +1,36 @@
+{%  extends 'sistema_compras/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Departamentos</h5>
+					<td><a class="btn btn-success" href="/create_departamentos">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Descripcion</th>
+							<th>Estado</th>
+                            <th></th>
+                            <th></th>
+						</tr>
+
+						{% for i in departamentos %}
+							<tr>
+								<td>{{i.descripcion}}</td>
+								<td>{{i.estado}}</td>
+								<td><a class="btn btn-info" href= "/update_departamentos/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-danger" href="/delete_departamentos/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{%  extends 'sistema_compras/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Proveedores</h5>
+					<td><a class="btn btn-success" href="/create_proveedores">Crear<span class="sr-only">(current)</span></a></td>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Nombre Comercial</th>
+							<th>Cedula/RNC</th>
+							<th>Estado</th>
+                            <th></th>
+                            <th></th>
+						</tr>
+
+						{% for i in proveedores %}
+							<tr>
+								<td>{{i.nombre_comercial}}</td>
+								<td>{{i.cedula_rnc}}</td>
+								<td>{{i.estado}}</td>
+								<td><a class="btn btn-info" href= "/update_proveedores/{{ i.id }}">Actualizar<span class="sr-only">(current)</span></a></td>
+								<td><a class="btn btn-danger" href="/delete_proveedores/{{ i.id }}">Eliminar<span class="sr-only">(current)</span></a></td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

@@ -1,0 +1,1 @@
+[{"model": "sistema_compras.asiento", "pk": 2, "fields": {"periodo_asiento_desde": "2023-04-01", "periodo_asiento_hasta": "2023-04-30", "id_cuenta_db": "80", "descripcion_db": "Compra de Vinos", "id_cuenta_cr": "4", "descripcion_cr": "Cuenta Corriente Banco X", "monto_db": 13000, "monto_cr": 13000, "transaccion": [5, 6]}}]

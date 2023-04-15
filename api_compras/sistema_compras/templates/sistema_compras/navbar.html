@@ -1,0 +1,25 @@
+{% load static %}
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/home">
+      <img src="{% static 'images/carrito.png' %}">
+      <style>
+        img {  
+          max-width: 8%;  
+          height: 8%;  
+          } 
+      </style>
+      Compras
+    </a>
+  <div class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="container-fluid" >
+      <a class="nav-item" href="/entidades">Entidades  </a>
+      <a class="nav-item" href="/estados">Estados  </a>
+      <a class="nav-item" href="/departamentos">Departamentos  </a>
+      <a class="nav-item" href="/unidadesMedidas">Unidades de Medida  </a>
+      <a class="nav-item" href="/proveedores">Proveedores  </a>
+      <a class="nav-item" href="/articulos">Articulos  </a>
+      <a class="nav-item" href="/ordenCompra">Orden de Compra  </a>
+      <a class="nav-item" href="/asiento">Asiento  </a>
+    </div>
+</nav>
+
